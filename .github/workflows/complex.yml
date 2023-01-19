@@ -1,0 +1,30 @@
+name: Complex
+
+on: [push]
+
+jobs:
+
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Date
+        run: date
+    
+  job2:
+    runs-on: windows-latest
+    steps:
+      - name: Get Date
+        run: date
+  
+  job3:
+    runs-on: macos-latest
+    steps:
+      - name: Get Date
+        run: date
+  
+  job4:
+    needs: [job1, job2,job3]
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get Date
+        run: date
